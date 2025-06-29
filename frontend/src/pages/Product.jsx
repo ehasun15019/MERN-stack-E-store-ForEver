@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
+import RelatedProduct from "../components/RelatedProduct";
 
 const Product = () => {
   const { productId } = useParams();
   // console.log(productId);
 
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
@@ -96,7 +97,10 @@ const Product = () => {
             </div>
           </div>
 
-          <button className="bg-black cursor-pointer text-white px-8 py-3 text-sm active:bg-gray-700">
+          <button
+            onClick={() => addToCart(productData._id, size)}
+            className="bg-black cursor-pointer text-white px-8 py-3 text-sm active:bg-gray-700"
+          >
             ADD To CART
           </button>
 
@@ -122,10 +126,22 @@ const Product = () => {
             An E-commerce website is an online platform that facilities the
             buying and selling of products or services over the the internet. It
             serves as a virtual marketplace where business and individuals can
-            showcase their products, and interact with coustomers.
+            showcase their products, and interact with customers.
+          </p>
+
+          <p>
+            E-commerce Website typically display product or services along with
+            details, description , image, places and any other variation (e.g..,
+            size, colors). Each product has their own dedicated page.
           </p>
         </div>
       </div>
+
+      {/* ------------- display related products ------------- */}
+      <RelatedProduct
+        category={productData.category}
+        subCategory={productData.subCategory}
+      />
     </div>
   ) : (
     <div className="opacity-0"></div>
