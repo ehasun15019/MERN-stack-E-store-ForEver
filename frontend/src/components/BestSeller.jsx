@@ -26,7 +26,7 @@ const BestSeller = () => {
           return (
             <ProductItem
               key={index}
-              id={item.id}
+              id={item._id}
               price={item.price}
               name={item.name}
               image={item.image}
