@@ -12,9 +12,7 @@ const NewsLetter = () => {
       </p>
 
       <p className="text-gray-400 mt-3">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente nobis
-        aliquid fugiat doloremque perspiciatis optio molestiae voluptate
-        praesentium, labore odit velit suscipit modi minima.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       </p>
 
       <form
