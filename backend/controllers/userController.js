@@ -11,8 +11,8 @@ const registerUser = async (req, res) => {
 }
 
 // Router for admin login
-const adminlogin = async (req, res) => {
+const adminUser = async (req, res) => {
 
 }
 
-export { loginUser, registerUser }
+export { loginUser, registerUser, adminUser }
